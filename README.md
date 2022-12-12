@@ -1,3 +1,5 @@
+# Install requirement
+    pip install -r requirement.txt
 # Generate yolov7 format
     python yolo_gen.py
 
