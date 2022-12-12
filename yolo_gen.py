@@ -37,7 +37,7 @@ for img_name in tqdm(img_files[:int(len(img_files)*0.8)]):
         # cv2.waitKey()
         # cv2.destroyAllWindows()
 
-dst = 'val_set'
+dst = './dataset/val_set'
 os.makedirs(dst, exist_ok=True)
 os.makedirs(os.path.join(dst, 'images'), exist_ok=True)
 os.makedirs(os.path.join(dst, 'labels'), exist_ok=True)

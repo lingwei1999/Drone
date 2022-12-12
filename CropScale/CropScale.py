@@ -6,8 +6,8 @@ import albumentations as A
 from tqdm import tqdm
 
 os.makedirs('../dataset/CropScale', exist_ok = True)
-os.makedirs('../datasetCropScale/images', exist_ok = True)
-os.makedirs('../datasetCropScale/labels', exist_ok = True)
+os.makedirs('../dataset/CropScale/images', exist_ok = True)
+os.makedirs('../dataset/CropScale/labels', exist_ok = True)
 class Crop:
     def __init__(self,x_min, y_min, x_max, y_max):
         self.transform = A.Compose([

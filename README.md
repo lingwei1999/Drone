@@ -6,16 +6,18 @@
     python main.py
 
 # Generate augmentation & rotation data
+    cd ../
     git clone https://github.com/whynotw/rotational-data-augmentation-yolo.git
-    cd rotational-data-augmentation-yolo.git
+    cd rotational-data-augmentation-yolo
     python rotation.py ../dataset/Augment -o ../dataset/RotAug_train
 
 # Generate multi-scale cropping data
-    cd CropScale
+    cd ../CropScale
     python CropScale.py
     python random_split.py
     
 # Train
+    cd ../
     git clone https://github.com/WongKinYiu/yolov7.git
     cd yolov7
     wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt
