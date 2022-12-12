@@ -40,12 +40,12 @@
     python train.py --workers 8 --device 0 --batch-size 8 --data ../hyp/method3/drone-Crop_woHyper_fine_tune.yaml --epochs 50 --img 1920 1920 --cfg cfg/training/yolov7x.yaml --name yolov7x-Drone_Crop_woHyper_finetune --weight ./runs/train/yolov7x-Drone_Crop/weights/best.pt  --hyp ../hyp/method3/hyp.scratch.p5-woHyper_fine_tune.yaml
 
 # Validation
-    python test.py --weights {Weights_Path} --conf 0.25 --iou 0.5 --img-size 2560 --data ../hyp/drone-val.yaml --name {Val_Path} --save-txt --batch-size 16 --no-trace
+    python test.py --weights {Weights_Path} --conf {CONFIDENCE} --iou {IoU} --img-size {Size} --data ../hyp/drone-val.yaml --name {Val_Path} --save-txt --batch-size 16 --no-trace
     cp runs/test/{Val_Path} ../TIoU/predict
     cd ../TIoU
     python TIoU.py
 
 # Detect
-    python detect.py --weights {Weights_Path} --conf 0.25 --img-size 2560 --source ../dataset/test --name {Detect_Output} --save-txt --nosave --no-trace
+    python detect.py --weights {Weights_Path} --conf {CONFIDENCE} --iou {IoU} --img-size {Size} --source ../dataset/test --name {Detect_Output} --save-txt --nosave --no-trace
     cd ../
     python label2ans.py {Detect_Output}
